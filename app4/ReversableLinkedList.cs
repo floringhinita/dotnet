@@ -21,14 +21,21 @@ namespace app4
             return rev;
         }
 
+        public void Reverse2()
+        {
+            this.ReverseRecursive(this.First);
+        }
+
         public ReversableLinkedList<T> ReverseRecursive(LinkedListNode<T> current)
         {
-            if (current != null && current.Next != null)
+            if (current != null)
             {
-                this.ReverseRecursive(current.Next);
-            }
+                LinkedListNode<T> next = current.Next;
+                this.AddFirst(current.Value);
+                this.Remove(current);
 
-            current = current.Previous;
+                this.ReverseRecursive(next);
+            }
 
             return this;
         }

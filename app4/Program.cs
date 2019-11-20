@@ -16,8 +16,11 @@ namespace app4
                 list.AddLast(i);
             }
 
-            
-            Console.WriteLine(list.Reverse());
+            list.Reverse2();
+            Console.WriteLine("Recursively reverse: {0}", list);
+
+            list.Reverse();
+            Console.WriteLine(list);
         }
     }
 }
