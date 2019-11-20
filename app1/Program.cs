@@ -10,10 +10,10 @@ namespace app1
         static void Main(string[] args)
         {
             string str;
-            Console.WriteLine("Enter phrase or press Esc to exit:");
 
             do
             {
+                Console.WriteLine("Enter phrase or press Esc to exit:");
                 str = Console.ReadLine();
 
                 Console.WriteLine(RemoveDupplicates(str));
