@@ -24,12 +24,8 @@ namespace InventoryApp.Lib
         {
             Room cheapest = new Room();
 
-            foreach(Hotel hotel in this)
-            {
-                Room room = hotel.GetCheapestRoom();
-            }
 
-            return room;
+            return cheapest;
         }
 
         public void Print()

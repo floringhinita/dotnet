@@ -1,0 +1,11 @@
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\bin\Debug\netcoreapp3.0\prob5.exe
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\bin\Debug\netcoreapp3.0\prob5.deps.json
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\bin\Debug\netcoreapp3.0\prob5.runtimeconfig.json
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\bin\Debug\netcoreapp3.0\prob5.runtimeconfig.dev.json
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\bin\Debug\netcoreapp3.0\prob5.dll
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\bin\Debug\netcoreapp3.0\prob5.pdb
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\obj\Debug\netcoreapp3.0\prob5.csprojAssemblyReference.cache
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\obj\Debug\netcoreapp3.0\prob5.AssemblyInfoInputs.cache
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\obj\Debug\netcoreapp3.0\prob5.AssemblyInfo.cs
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\obj\Debug\netcoreapp3.0\prob5.dll
+C:\Users\TTC056-0\source\repos\dotnet\day3\prob5\obj\Debug\netcoreapp3.0\prob5.pdb

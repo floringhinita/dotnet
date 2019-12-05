@@ -13,12 +13,13 @@ namespace InventoryApp.Lib
 
         public City City { get; set; }
 
-        List<Room> RoomList = new List<Room>();
+        public List<Room> RoomList { get; set; }
 
         public Hotel(int id, string name)
         {
             this.Id = id;
             this.Name = name;
+            this.RoomList = new List<Room>();
         }
 
         public Hotel AddRoom(Room room)

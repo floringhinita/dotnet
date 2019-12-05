@@ -4,7 +4,7 @@ using InventoryApp.Interfaces;
 
 namespace InventoryApp.Lib
 {
-    public class Room : IPrintable
+    public class Room : IPrintable, IComparable<Room>
     {
         int Id { get; set; }
         public string Name { get; set; }
@@ -40,6 +40,41 @@ namespace InventoryApp.Lib
         {
             Console.WriteLine(this.ToString());
 
+        }
+
+        int IComparable<Room>.CompareTo(Room other)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int CompareTo(Room other)
+        {
+            int adultsComp = this.Adults.CompareTo(other.Adults);
+            int childrenComp = this.Children.CompareTo(other.Children);
+            int rateComp = this.Rate.Amount.CompareTo(other.Rate.Amount);
+
+            if (adultsComp == 0)
+            {
+                if(childrenComp == 0)
+                {
+                    if (rateComp == 0)
+                    {
+                        return 0;
+                    }
+
+                    if (childrenComp > 0)
+                    {
+                        return -1;
+                    }
+                }
+            }
+
+            if (adultsComp > 0)
+            {
+                return -1;
+            }
+
+            return 1;
         }
     }
 

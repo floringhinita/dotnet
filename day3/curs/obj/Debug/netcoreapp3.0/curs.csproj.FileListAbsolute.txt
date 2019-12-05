@@ -1,0 +1,11 @@
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\bin\Debug\netcoreapp3.0\curs.exe
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\bin\Debug\netcoreapp3.0\curs.deps.json
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\bin\Debug\netcoreapp3.0\curs.runtimeconfig.json
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\bin\Debug\netcoreapp3.0\curs.runtimeconfig.dev.json
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\bin\Debug\netcoreapp3.0\curs.dll
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\bin\Debug\netcoreapp3.0\curs.pdb
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\obj\Debug\netcoreapp3.0\curs.csprojAssemblyReference.cache
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\obj\Debug\netcoreapp3.0\curs.AssemblyInfoInputs.cache
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\obj\Debug\netcoreapp3.0\curs.AssemblyInfo.cs
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\obj\Debug\netcoreapp3.0\curs.dll
+C:\Users\TTC056-0\source\repos\dotnet\day3\curs\obj\Debug\netcoreapp3.0\curs.pdb

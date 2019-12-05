@@ -1,0 +1,3 @@
+C:\Users\TTC056-0\source\repos\dotnet\day2\InventoryApp\obj\Debug\netcoreapp3.0\InventoryApp.csprojAssemblyReference.cache
+C:\Users\TTC056-0\source\repos\dotnet\day2\InventoryApp\obj\Debug\netcoreapp3.0\InventoryApp.AssemblyInfoInputs.cache
+C:\Users\TTC056-0\source\repos\dotnet\day2\InventoryApp\obj\Debug\netcoreapp3.0\InventoryApp.AssemblyInfo.cs
