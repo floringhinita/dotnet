@@ -35,6 +35,11 @@ namespace prob2.Core
         {
             return Task.Run(() =>
             {
+                if (Directory.Exists(Path))
+                {
+                    Directory.CreateDirectory(Path);
+                }
+
                 var file = $"{Path}/file.{fileId}.dat";
 
                 long nrOfWords = NrWordsOnEachFile;

@@ -8,12 +8,12 @@ namespace prob1.Core
     class App
     {
         private static Dictionary<int, int> _dict = new Dictionary<int, int>();
+        private static int N = 100000;
 
-        public static void Run()
+        public static void RunAsync()
         {
             int proc = Environment.ProcessorCount;
 
-            int N = 1000;
             int batches = (N / proc);
             List<Thread> threads = new List<Thread>();
 
@@ -35,6 +35,26 @@ namespace prob1.Core
             var p = _dict.OrderByDescending(o => o.Value).FirstOrDefault();
 
             Console.WriteLine($"{p.Key} -- {p.Value}"); 
+        }
+
+        public static void Run()
+        {
+            int[] list = BuildAnArray(1, N);
+
+            int max = 0;
+            int nr = 0;
+
+            foreach (int i in list)
+            {
+                int divisors = i.CountDivisors();
+                if (divisors > max)
+                {
+                    max = divisors;
+                    nr = i;
+                }
+            }
+
+            Console.WriteLine($"{nr} -- {max}");
         }
 
         public static void Calculate(object obj)

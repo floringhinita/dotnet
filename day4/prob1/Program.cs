@@ -2,6 +2,7 @@
 {
     using prob1.Core;
     using System.Diagnostics;
+    using System;
 
     class Program
     {
@@ -10,7 +11,8 @@
 
             var stopwatch = Stopwatch.StartNew();
 
-            App.Run();
+            App.RunAsync();
+
             stopwatch.Stop();
 
             Console.WriteLine($"Elapsed time: {stopwatch.Elapsed.TotalMilliseconds} ms");

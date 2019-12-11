@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace prob2
 {
@@ -6,7 +7,7 @@ namespace prob2
     {
         static void Main(string[] args)
         {
-            prob2.Core.App.Run();
+             prob2.Core.App.Run();
         }
     }
 }
