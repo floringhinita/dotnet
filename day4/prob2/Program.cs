@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Diagnostics;
 
 namespace prob2
 {
@@ -7,7 +7,14 @@ namespace prob2
     {
         static void Main(string[] args)
         {
-             prob2.Core.App.Run();
+            var stopwatch = Stopwatch.StartNew();
+
+            prob2.Core.App.Run();
+
+            stopwatch.Stop();
+
+            Console.WriteLine($"Elapsed time: {stopwatch.Elapsed.TotalMilliseconds} ms");
+          
         }
     }
 }

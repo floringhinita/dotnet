@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Concurrent;
 
 namespace prob2.Core
 {
@@ -23,31 +24,50 @@ namespace prob2.Core
 
             string[] files = Directory.GetFiles(Path, "*.dat");
 
-            List<Task<string>> allTasks = new List<Task<string>>();
+            ConcurrentDictionary<string, int> dict = new ConcurrentDictionary<string, int>();
 
             Parallel.ForEach(files, (file) =>
             {
-                Task<string> task = Task<string>.Run(() => 
+                Task<string> task = Task<string>.Run(() =>
                 {
-                    Console.WriteLine($"{Task.CurrentId} {file}");
-
                     return ReadFile(file);
                 });
 
-                Task task2 = task.ContinueWith((prev) =>
-                {
-                    Console.WriteLine($"{Task.CurrentId} processing content");
+                var xxxx = task.Result;
+                string[] words = xxxx.Split(' ');
 
-                    int xx = CountWords(prev.Result);
-                    // int xx2 = CountDistinctWords(prev.Result);
+                Parallel.Invoke(
+                    () => {
 
-                    Console.WriteLine($"Word count {xx}");
-                    // Console.WriteLine($"Distinct word count {xx2}");
-                });
+                        int currentLength = 0;
 
-                task2.Wait();
+                        dict.TryGetValue("words", out currentLength);
+
+                        Console.WriteLine($"current length = {currentLength}");
+                        Console.WriteLine($"words count = {words.Count()}");
+
+                        dict.TryAdd("words", words.Count() + currentLength);
+                    },
+                    () => {
+                        int currentLength = 0;
+
+                        dict.TryGetValue("xs", out currentLength);
+
+                        var xs = from w in words
+                                 where w.Length < 2
+                                 select w;
+
+                        Console.WriteLine($"current length = {currentLength}");
+                        Console.WriteLine($"words count = {xs.Count()}");
+
+                        dict.TryAdd("xs", currentLength + xs.Count());
+                    });
             });
 
+            foreach (var item in dict)
+            {
+                Console.WriteLine($"{item.Key} = {item.Value}");
+            }
         }
 
         public static string ReadFile(string file)
