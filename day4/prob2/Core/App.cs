@@ -38,29 +38,64 @@ namespace prob2.Core
 
                 Parallel.Invoke(
                     () => {
+                        int _currentLength;
+                        dict.TryGetValue("words", out _currentLength);
 
-                        int currentLength = 0;
+                        Console.WriteLine($"{Task.CurrentId} words count = {words.Count()}, current length = {_currentLength}");
 
-                        dict.TryGetValue("words", out currentLength);
-
-                        Console.WriteLine($"current length = {currentLength}");
-                        Console.WriteLine($"words count = {words.Count()}");
-
-                        dict.TryAdd("words", words.Count() + currentLength);
+                        dict.AddOrUpdate("words", words.Count(), (k, v) => v + words.Count());
                     },
                     () => {
-                        int currentLength = 0;
 
-                        dict.TryGetValue("xs", out currentLength);
-
-                        var xs = from w in words
-                                 where w.Length < 2
+                        var wrds = from w in words.AsParallel()
+                                 where w.Length <= 5
                                  select w;
 
-                        Console.WriteLine($"current length = {currentLength}");
-                        Console.WriteLine($"words count = {xs.Count()}");
+                        int _currentLength;
+                        dict.TryGetValue("xs", out _currentLength);
 
-                        dict.TryAdd("xs", currentLength + xs.Count());
+                        Console.WriteLine($"{Task.CurrentId} words count = {wrds.Count()}, current length = {_currentLength}");
+
+                        dict.AddOrUpdate("xs", wrds.Count(), (k, v) => v + wrds.Count());
+                    },
+                    () => {
+
+                        var wrds = from w in words.AsParallel()
+                                   where w.Length >= 5 && w.Length <= 10
+                                   select w;
+
+                        int _currentLength;
+                        dict.TryGetValue("s", out _currentLength);
+
+                        Console.WriteLine($"{Task.CurrentId} words count = {wrds.Count()}, current length = {_currentLength}");
+
+                        dict.AddOrUpdate("s", wrds.Count(), (k, v) => v + wrds.Count());
+                    },
+                    () => {
+
+                        var wrds = from w in words.AsParallel()
+                                where w.Length >= 10 && w.Length <= 15 
+                                select w;
+
+                        int _currentLength;
+                        dict.TryGetValue("m", out _currentLength);
+
+                        Console.WriteLine($"{Task.CurrentId} words count = {wrds.Count()}, current length = {_currentLength}");
+
+                        dict.AddOrUpdate("m", wrds.Count(), (k, v) => v + wrds.Count());
+                    },
+                    () => {
+
+                        var wrds = from w in words.AsParallel()
+                                where w.Length >= 15 
+                                select w;
+
+                        int _currentLength;
+                        dict.TryGetValue("l", out _currentLength);
+
+                        Console.WriteLine($"{Task.CurrentId} words count = {wrds.Count()}, current length = {_currentLength}");
+
+                        dict.AddOrUpdate("l", wrds.Count(), (k, v) => v + wrds.Count());
                     });
             });
 
