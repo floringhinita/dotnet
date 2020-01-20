@@ -81,6 +81,7 @@ namespace Webbeds.Api
 
             app.UseRouting();
 
+            app.UseMiddleware<RequestTimeMiddleware>();
             app.UseMiddleware<RequestLoggerMiddleware>();
 
             app.UseAuthentication();
